@@ -64,7 +64,7 @@ public class DependentTask extends Task
 		dateStarted = null;
 	}
 	
-	public void clearPreReq(DateTime dt)
+	public void clearPreReq()
 	{
 		prereqTask = null;
 		hasPreReq = false;
@@ -148,4 +148,35 @@ public class DependentTask extends Task
 		
 	}
 
+	
+	public String toString()
+	{
+		
+		
+		if (inProgress)
+		{
+		return " \n\n Dependent Task Info: ... " + "\n Task Name: " + taskName + "\n Task ID: " + taskID  +
+				"\n Current Date:----- " + current.toString() + "\n Status: In Progress....";
+		}
+		else if (isCompleted)
+		{
+			return " \n\n Dependent Task Info: ...  " + "\n Task Name: " + taskName + "\n Task ID: " + taskID +
+					"\n Current Date:----- " + current.toString() + "\n Status: Completed ! ";
+		}
+		else
+		{
+			if (hasPreReq)
+			{
+			return " \n\n Dependent Task Info: ...  " + "\n Task Name: " + taskName + "\n Task ID: " + taskID +
+					"\n Current Date:----- " + current.toString() + "\n Status: Waiting on Prerequisite Task...." + "\n Prerequisite Task Info:" + prereqTask.toString();
+			}
+			else
+				return " \n\n Dependent Task Info: ...  " + "\n Task Name: " + taskName + "\n Task ID: " + taskID +
+				"\n Current Date:----- " + current.toString() + "\n Status: Not Yet Started....";
+		}
+		
+		
+	}
+
+	
 }

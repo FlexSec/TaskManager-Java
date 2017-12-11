@@ -122,6 +122,10 @@ public class DateTime {
 		seconds = dt.getSeconds();
 	}
 	
+	public String toString()
+	{
+		return "\n\n Date: " + month + " / " + day + " / " + year + "\n Time: " + hours + " : " + minutes + " : " + seconds;
+	}
 	
 
 }

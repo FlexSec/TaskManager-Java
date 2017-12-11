@@ -34,7 +34,7 @@ public static void main(String[] args)
 	
 	if (dt3.setDateCompleted(t2))
 	{
-		dt2.clearPreReq(t2);
+		dt2.clearPreReq();
 		System.out.printf("\n Task is now Finished");
 		
 	}
@@ -43,7 +43,7 @@ public static void main(String[] args)
 	
 	if (dt2.setDateCompleted(t2))
 	{
-		dt1.clearPreReq(t2);
+		dt1.clearPreReq();
 		System.out.printf("\n Task is now Finished");
 	}
 	else
@@ -69,6 +69,10 @@ public static void main(String[] args)
 	for (int c = 0; c < numberTasks; c++)
 	{
 		tasks[c].setCurrentDate(someStartTime);
+	}
+	for (int c = 0; c < numberTasks; c++)
+	{
+		System.out.println(tasks[c].toString());
 	}
 	
 	numberTasks = 0;

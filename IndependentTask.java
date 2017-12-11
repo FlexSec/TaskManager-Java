@@ -38,7 +38,7 @@ public class IndependentTask extends Task
 	
 	public boolean start()
 	{
-		if (current.isAfter(startDate))
+		if (current.isAfter(startDate) || current == startDate)
 		{
 			inProgress = true;
 			dateStarted = current;
@@ -117,4 +117,24 @@ public class IndependentTask extends Task
 		
 			
 	}
+
+	public String toString()
+	{
+		if (inProgress)
+		{
+		return " \n\n Independent Task Info: ... " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Date:------ " + startDate.toString() +
+				"\n Current Date:----- " + current.toString() + "\n Status: In Progress....";
+		}
+		else if (isCompleted)
+		{
+			return " \n\n Independent Task Info: ...  " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Date:----- " + startDate.toString() +
+					"\n Current Date:----- " + current.toString() + "\n Status: Completed ! ";
+		}
+		else
+		{
+			return " \n\n Independent Task Info: ...  " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Date:----- " + startDate.toString()  +
+			"\n Current Date:----- " + current.toString() + "\n Status: Not Started....";
+		}
+	}
+
 }

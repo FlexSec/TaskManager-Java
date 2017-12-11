@@ -50,6 +50,7 @@ public abstract class Task {
 
 	public abstract boolean setDateCompleted(DateTime dt);
 	public abstract void setCurrentDate(DateTime t);
+	public abstract String toString();
 	//public abstract void setDateStarted(DateTime dt);
 
 	

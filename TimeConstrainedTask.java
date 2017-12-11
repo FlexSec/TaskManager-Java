@@ -83,4 +83,23 @@ public class TimeConstrainedTask extends Task
 		setCurrentDate(tct.getCurrent());
 	}
 	
+	public String toString()
+	{
+		if (inProgress)
+		{
+		return "\n\n Time Constrained Task Info: ... " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Time:----- " + startTime.toString() + "\n Deadline:----- " + deadline.toString() +
+				"\n Current Date:----- " + current.toString() + "\n Status: In Progress....";
+		}
+		else if (isCompleted)
+		{
+			return "\n\n Time Constrained Task Info: ... " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Time:----- " + startTime.toString() + "\n Deadline:----- " + deadline.toString() +
+					"\n Current Date:----- " + current.toString() + "\n Status: Completed ! ";
+		}
+		else
+		{
+			return "\n\n Time Constrained Task Info: ... " + "\n Task Name: " + taskName + "\n Task ID: " + taskID + "\n Start Time:----- " + startTime + "\n Deadline:----- " + deadline.toString() +
+			"\n Current Date:----- " + current.toString() + "\n Status: Not Started....";
+		}
+		
+	}
 }
