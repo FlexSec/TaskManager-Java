@@ -1,10 +1,9 @@
-
 public class DependentTask extends Task 
 {
 	private Task prereqTask;
 	private boolean hasPreReq;
 	private boolean canStart;
-	private boolean inProgress;
+	
 	
 	public boolean setDateCompleted(DateTime dt)
 	{
@@ -71,6 +70,10 @@ public class DependentTask extends Task
 		hasPreReq = false;
 		canStart = true;
 		
+	}
+	public void setCurrentDate(DateTime dt)
+	{
+		current = dt;
 	}
 
 	

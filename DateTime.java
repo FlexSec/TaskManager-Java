@@ -1,4 +1,3 @@
-
 public class DateTime {
 	
 	private int day;
@@ -57,6 +56,30 @@ public class DateTime {
 	public void setSeconds(int nseconds)
 	{
 		seconds = nseconds;
+	}
+	
+	public boolean isAfter(DateTime start)
+	{
+		if (start.getYear() < year)
+			return true;
+		else if (start.getYear() == year && start.getMonth() < month)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() < day)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isBefore(DateTime start)
+	{
+		if (start.getYear() > year)
+			return true;
+		else if (start.getYear() == year && start.getMonth() > month)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() > day)
+			return true;
+		else
+			return false;
 	}
 	
 	public DateTime()
