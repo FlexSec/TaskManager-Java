@@ -93,10 +93,8 @@ public class DependentTask extends Task
 	public void setCurrentDate(DateTime dt)
 	{
 		current = dt;
-		if (dt == startDate || dt.isAfter(startDate))
-		{
-			setDateStarted(dt);
-		}
+		setDateStarted(dt);
+		
 	}
 
 	

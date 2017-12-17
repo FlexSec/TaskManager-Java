@@ -22,7 +22,7 @@ public class TimeConstrainedTask extends Task
 	public void setCurrentDate(DateTime dt)
 	{
 		current = dt;
-		if (current == deadline)
+		if (current == deadline || current.isAfter(deadline))
 		{
 			dateCompleted = current;
 			isCompleted = true;

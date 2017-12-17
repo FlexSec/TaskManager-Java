@@ -18,6 +18,7 @@ public class IndependentTask extends Task
 		if(inProgress)
 		{
 		dateCompleted = dt;
+		inProgress = false;
 		isCompleted = true;
 		return true;
 		}

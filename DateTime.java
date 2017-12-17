@@ -66,6 +66,12 @@ public class DateTime {
 			return true;
 		else if (start.getYear() == year && start.getMonth() == month && start.getDay() < day)
 			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() < hours)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() == hours && start.getMinutes() < minutes)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() == hours && start.getMinutes() == minutes && start.getSeconds() < seconds)
+			return true;
 		else
 			return false;
 	}
@@ -77,6 +83,12 @@ public class DateTime {
 		else if (start.getYear() == year && start.getMonth() > month)
 			return true;
 		else if (start.getYear() == year && start.getMonth() == month && start.getDay() > day)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() > hours)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() == hours && start.getMinutes() > minutes)
+			return true;
+		else if (start.getYear() == year && start.getMonth() == month && start.getDay() == day && start.getHours() == hours && start.getMinutes() == minutes && start.getSeconds() > seconds)
 			return true;
 		else
 			return false;
