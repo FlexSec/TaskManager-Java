@@ -51,13 +51,13 @@ public class TimeConstrainedTask extends Task
 	
 	public TimeConstrainedTask()
 	{
-		taskID = "001";
+		taskID = 0;
 		taskName = "default";
 		startTime = null;
 		deadline = null;
 	}
 	
-	public TimeConstrainedTask(String id, String name, DateTime st, DateTime dl)
+	public TimeConstrainedTask(int id, String name, DateTime st, DateTime dl)
 	{
 		taskID = id;
 		taskName = name;
@@ -65,7 +65,7 @@ public class TimeConstrainedTask extends Task
 		deadline = dl;
 	}
 	
-	public TimeConstrainedTask(String id, String name, DateTime st, DateTime dl, DateTime ncurrent)
+	public TimeConstrainedTask(int id, String name, DateTime st, DateTime dl, DateTime ncurrent)
 	{
 		taskID = id;
 		taskName = name;

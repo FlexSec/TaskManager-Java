@@ -3,11 +3,12 @@ public abstract class Task {
 	
 	protected DateTime dateStarted = null;
 	protected DateTime dateCompleted = null;
-	protected DateTime current = null;
+	protected DateTime current = new DateTime(1,1,1900,1,1,59);
 	protected boolean isCompleted = false;
 	protected boolean inProgress = false;
+	protected DateTime startDate;
 	protected String taskName;
-	protected String taskID;
+	protected int taskID;
 	
 	public DateTime getStartDate()
 	{
@@ -29,7 +30,20 @@ public abstract class Task {
 		taskName = name;
 	}
 	
-	public void setTaskID(String ID)
+
+	
+	public DateTime getStartingDate()
+	{
+		return startDate;
+	}
+	
+	public void setStartDate(DateTime dt)
+	{
+		startDate = dt;
+	}
+	
+	
+	public void setTaskID(int ID)
 	{
 		taskID = ID;
 	}
@@ -38,7 +52,7 @@ public abstract class Task {
 	{
 		return taskName;
 	}
-	public String getTaskID()
+	public int getTaskID()
 	{
 		return taskID;
 	}
@@ -51,6 +65,7 @@ public abstract class Task {
 	public abstract boolean setDateCompleted(DateTime dt);
 	public abstract void setCurrentDate(DateTime t);
 	public abstract String toString();
+	//public abstract void addPreReq(Task t1);
 	//public abstract void setDateStarted(DateTime dt);
 
 	

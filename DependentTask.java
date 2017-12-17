@@ -5,6 +5,7 @@ public class DependentTask extends Task
 	private boolean canStart;
 	
 	
+	
 	public boolean setDateCompleted(DateTime dt)
 	{
 		if (canStart)
@@ -63,6 +64,24 @@ public class DependentTask extends Task
 		inProgress = false;
 		dateStarted = null;
 	}
+	public void addPreReq(IndependentTask t1)
+	{
+		prereqTask = t1;
+		hasPreReq = true;
+		canStart = false;
+		inProgress = false;
+		dateStarted = null;
+	}
+	public void addPreReq(Task t1)
+	{
+		prereqTask = t1;
+		prereqTask = t1;
+		hasPreReq = true;
+		canStart = false;
+		inProgress = false;
+		dateStarted = null;
+		
+	}
 	
 	public void clearPreReq()
 	{
@@ -74,13 +93,17 @@ public class DependentTask extends Task
 	public void setCurrentDate(DateTime dt)
 	{
 		current = dt;
+		if (dt == startDate || dt.isAfter(startDate))
+		{
+			setDateStarted(dt);
+		}
 	}
 
 	
 	public DependentTask()
 	{
 		taskName = "blank";
-		taskID = " 00 ";
+		taskID = 0;
 		isCompleted = false;
 		dateStarted = null;
 		dateCompleted = null;
@@ -91,7 +114,7 @@ public class DependentTask extends Task
 	public DependentTask(DateTime dt)
 	{
 		taskName = "blank";
-		taskID = " 00 ";
+		taskID = 0;
 		isCompleted = false;
 		dateCompleted = null;
 		hasPreReq = false;
@@ -101,7 +124,7 @@ public class DependentTask extends Task
 		
 	}
 
-	public DependentTask(DateTime dt, String name, String ID)
+	public DependentTask(DateTime dt, String name, int ID)
 	{
 		taskName = name;
 		taskID = ID;
@@ -113,10 +136,24 @@ public class DependentTask extends Task
 		dateStarted = new DateTime(dt);
 	}
 	
+	public DependentTask(DateTime dt, int ID)
+	{
+		taskName = "blank";
+		taskID = ID;
+		isCompleted = false;
+		dateCompleted = null;
+		hasPreReq = false;
+		canStart = true;
+		inProgress = true;
+		dateStarted = new DateTime(dt);
+	}
+	
+	
+	
 	public DependentTask(DateTime dt, DependentTask t1)
 	{
 		taskName = "blank";
-		taskID = " 00 ";
+		taskID = 0;
 		isCompleted = false;
 		dateCompleted = null;
 		hasPreReq = true;
@@ -124,7 +161,7 @@ public class DependentTask extends Task
 		setDateStarted(dt);
 		
 	}
-	public DependentTask(DateTime dt, DependentTask t1, String name, String ID)
+	public DependentTask(DateTime dt, DependentTask t1, String name, int ID)
 	{
 		taskName = name;
 		taskID =  ID;

@@ -1,17 +1,6 @@
 public class IndependentTask extends Task
 {
-	private DateTime startDate;
 	
-	
-	public DateTime getStartingDate()
-	{
-		return startDate;
-	}
-	
-	public void setStartDate(DateTime dt)
-	{
-		startDate = dt;
-	}
 	
 	public DateTime getCurrentDate()
 	{
@@ -51,7 +40,7 @@ public class IndependentTask extends Task
 	
 	public IndependentTask()
 	{
-		taskID = "001";
+		taskID = 0;
 		taskName = "default";
 		dateStarted = null;
 		dateCompleted = null;
@@ -62,7 +51,7 @@ public class IndependentTask extends Task
 	public IndependentTask(DateTime start)
 	{
 		startDate = start;
-		taskID = "001";
+		taskID = 0;
 		taskName = "default";
 		dateStarted = null;
 		dateCompleted = null;
@@ -73,13 +62,13 @@ public class IndependentTask extends Task
 	{
 		startDate = start;
 		current = ncurrent;
-		taskID = "001";
+		taskID = 0;
 		taskName = "default";
 		start();
 		
 	}
 	
-	public IndependentTask(String name, String id)
+	public IndependentTask(String name, int id)
 	{
 		taskID = id;
 		taskName = name;
@@ -89,7 +78,7 @@ public class IndependentTask extends Task
 		current = null;
 	
 	}
-	public IndependentTask(String name, String id, DateTime start, DateTime ncurrent)
+	public IndependentTask(String name, int id, DateTime start, DateTime ncurrent)
 	{
 		startDate = start;
 		current = ncurrent;
