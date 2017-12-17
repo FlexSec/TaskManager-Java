@@ -101,7 +101,8 @@ public class Test
 	                            }
 	                            System.out.println("Which task is the new task dependent on?");
 	                            int depTask = input.nextInt();   
-	                            DependentTask temp = new DependentTask(sdt, numberoftasks +1);
+	                            DependentTask temp = new DependentTask(sdt,d, numberoftasks +1);
+	                       
 	                            temp.addPreReq(t[depTask-1]);
 	                            t[numberoftasks] = temp;
 	                            numberoftasks++;

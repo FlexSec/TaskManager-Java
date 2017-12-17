@@ -94,6 +94,36 @@ public class DateTime {
 			return false;
 	}
 	
+	public int toSeconds()
+	{
+		if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+		{
+			return ( (day * 86400) + (month * (31 * 86400) ) + ((year - 1900) * (365 * 86400)) + (hours * 3600) + (minutes * 60) + seconds) ;
+		}
+		else if (month == 4 || month == 6 || month == 9 || month == 11)
+		{
+			return ( (day * 86400) + (month * (30 * 86400) ) + ((year - 1900) * (365 * 86400)) + (hours * 3600) + (minutes * 60) + seconds) ;
+		}
+		else if (month == 2 && year % 400 == 0)
+		{
+			return ( (day * 86400) + (month * (29 * 86400) ) + ((year - 1900) * (365 * 86400)) + (hours * 3600) + (minutes * 60) + seconds) ;
+		}
+		else
+		{
+			return ( (day * 86400) + (month * (29 * 86400) ) + ((year - 1900) * (365 * 86400)) + (hours * 3600) + (minutes * 60) + seconds) ;
+		}
+	}
+	
+	public boolean isLeapYear()
+	{
+		if (year % 400 == 0)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+	
 	public DateTime()
 	{
 		day = 1;

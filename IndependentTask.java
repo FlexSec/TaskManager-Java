@@ -9,6 +9,7 @@ public class IndependentTask extends Task
 	public void setCurrentDate(DateTime dt)
 	{
 		current = dt;
+		if (isCompleted == false)
 		start();
 	}
 	
