@@ -7,8 +7,10 @@ public abstract class Task {
 	protected boolean isCompleted = false;
 	protected boolean inProgress = false;
 	protected DateTime startDate;
+	protected DateTime finishDate;
 	protected String taskName;
 	protected int taskID;
+	protected boolean timeDependent = false;
 	
 	public DateTime getStartDate()
 	{
@@ -42,6 +44,11 @@ public abstract class Task {
 		startDate = dt;
 	}
 	
+	public DateTime getFinish()
+	{
+		return finishDate;
+	}
+	
 	
 	public void setTaskID(int ID)
 	{
@@ -65,6 +72,7 @@ public abstract class Task {
 	public abstract boolean setDateCompleted(DateTime dt);
 	public abstract void setCurrentDate(DateTime t);
 	public abstract String toString();
+	public abstract boolean hasEndTime();
 	//public abstract void addPreReq(Task t1);
 	//public abstract void setDateStarted(DateTime dt);
 

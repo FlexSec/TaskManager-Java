@@ -4,6 +4,10 @@ public class DependentTask extends Task
 	private boolean hasPreReq;
 	private boolean canStart;
 	
+	public boolean hasEndTime()
+	{
+		return false;
+	}
 	
 	
 	public boolean setDateCompleted(DateTime dt)
@@ -74,7 +78,6 @@ public class DependentTask extends Task
 	}
 	public void addPreReq(Task t1)
 	{
-		prereqTask = t1;
 		prereqTask = t1;
 		hasPreReq = true;
 		canStart = false;

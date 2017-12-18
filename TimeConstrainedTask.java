@@ -3,6 +3,11 @@ public class TimeConstrainedTask extends Task
 	private DateTime startTime;
 	private DateTime deadline;
 	
+	public boolean hasEndTime()
+	{
+		return true;
+	}
+	
 	public void setStartTime(DateTime dt)
 	{
 		startTime = dt;
@@ -62,6 +67,8 @@ public class TimeConstrainedTask extends Task
 		taskID = id;
 		taskName = name;
 		startTime = st;
+		startDate = st;
+		finishDate = dl;
 		deadline = dl;
 	}
 	
@@ -71,6 +78,8 @@ public class TimeConstrainedTask extends Task
 		taskName = name;
 		startTime = st;
 		deadline = dl;
+		finishDate = dl;
+		startDate = st;
 		setCurrentDate(ncurrent);
 	}
 	
@@ -80,6 +89,8 @@ public class TimeConstrainedTask extends Task
 		taskName = tct.getTaskName();
 		startTime = tct.getStartTime();
 		deadline = tct.getDeadline();
+		startDate = tct.getStartingDate();
+		finishDate = tct.getFinish();
 		setCurrentDate(tct.getCurrent());
 	}
 	

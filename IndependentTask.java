@@ -1,6 +1,9 @@
 public class IndependentTask extends Task
 {
-	
+	public boolean hasEndTime()
+	{
+		return false;
+	}
 	
 	public DateTime getCurrentDate()
 	{
